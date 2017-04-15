@@ -1,0 +1,68 @@
+*{
+  margin:0;
+  padding:0;
+}
+body{
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', serif;
+
+}
+.nav{
+  background-color: black;
+  color: #ffffff;
+  list-style: none;
+  text-align: right;
+  padding: 30px 0 30px 0;
+
+}
+.nav #logo{
+  width:15%;
+  height:35px;
+position: relative;
+
+left: -40%;
+}
+.nav > li{
+  display: inline-block;
+  padding-right: 100px;
+
+}
+.nav > li > a{
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 20px;
+
+}
+.nav > li > a:hover{
+
+  color: #c1c1c1;
+}
+.w3-content{
+  position: relative;
+
+}
+.button1{
+position : absolute;
+top: 50%;
+right: 30px;
+}
+.leftbutton{
+  margin-right: 800px;
+  cursor: pointer;
+background-color: grey;
+color: white;
+
+}
+.rightButton{
+  margin-left: 800px;
+  cursor: pointer;
+  background-color: grey;
+  color: white;
+
+
+}
+.nav p{
+  text-align: center;
+}

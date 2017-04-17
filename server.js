@@ -18,11 +18,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 var methodOverride = require('method-override');
 app.use(methodOverride('_method'));
 
-//connects to the database
-mongoose.connect(mongoDBURI);
-db.once('open', function() {
-  console.log('connected to mongo');
-});
+
 
 //this creates a session
 var session = require('express-session');
@@ -50,8 +46,13 @@ app.use('/shoes', usersShoes);
 
 app.listen(port, function(){
   console.log('listening');
-});
 
+});
+//connects to the database
+mongoose.connect(mongoDBURI);
+db.once('open', function() {
+  console.log('connected to mongo');
+});
 app.get('/', function(req, res){
     console.log(req.session);
   res.render('index.ejs', {

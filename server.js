@@ -31,10 +31,22 @@ app.use(session({
 app.use(express.static('public'));
 //checks to see if the server is running
 
+//controller models
+var usersController = require('./controllers/users.js');
+app.use('/users', usersController);
+
+
+var usersSessions = require('./controllers/session.js');
+app.use('/sessions', usersSessions);
+
 app.listen(3000, function(){
   console.log('listening');
 });
 
 app.get('/', function(req, res){
-  res.render('index.ejs');
+    console.log(req.session);
+  res.render('index.ejs', {
+        currentUser : req.session.currentUser
+  });
+
 });

@@ -66,3 +66,29 @@ color: white;
 .nav p{
   text-align: center;
 }
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+}
+label{
+  display:inline-block;
+   width:100px;
+   margin: 10px;
+}
+.form {
+  width: 300px;
+margin: 0 auto;
+margin-top: 220px;
+}
+.btn{
+  background: black;
+border-radius: 25px;
+font-family: Arial;
+color: #ffffff;
+font-size: 15px;
+padding: 10px 20px 10px 20px;
+text-decoration: none;
+}

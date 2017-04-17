@@ -48,9 +48,6 @@ var usersShoes = require('./controllers/shoes.js');
 app.use('/shoes', usersShoes);
 
 
-app.listen(port, function(){
-  console.log('listening');
-});
 
 app.get('/', function(req, res){
     console.log(req.session);
@@ -58,4 +55,8 @@ app.get('/', function(req, res){
         currentUser : req.session.currentUser
   });
 
+});
+
+app.listen(port, function(){
+  console.log('listening');
 });

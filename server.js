@@ -2,6 +2,10 @@
 var express = require('express');
 var app = express();
 
+var port = process.env.PORT || 3000;
+var mongoDBURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/shoeapp';
+
+
 //allows the use of mongodb
 var mongoose = require('mongoose');
 var db = mongoose.connection;
@@ -15,7 +19,7 @@ var methodOverride = require('method-override');
 app.use(methodOverride('_method'));
 
 //connects to the database
-mongoose.connect('mongodb://localhost:27017/shoeapp');
+mongoose.connect(mongoDBURI);
 db.once('open', function() {
   console.log('connected to mongo');
 });
@@ -39,7 +43,12 @@ app.use('/users', usersController);
 var usersSessions = require('./controllers/session.js');
 app.use('/sessions', usersSessions);
 
-app.listen(3000, function(){
+
+var usersShoes = require('./controllers/shoes.js');
+app.use('/shoes', usersShoes);
+
+
+app.listen(port, function(){
   console.log('listening');
 });
 

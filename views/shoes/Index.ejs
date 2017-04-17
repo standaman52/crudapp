@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="/style.css">
+    <style media="screen">
+    body{
+      text-align: center;
+    }
+      #header{
+        text-align: center;
+      }
+
+      #img{
+        display: block;
+        margin: 0 auto;
+        padding-top: 50px;
+
+      }
+
+      .button {
+  text-align: center;
+  background-color: black;
+  border-radius: 5px;
+  color: white;
+  padding: .5em;
+  text-decoration: none;
+}
+.button:focus,
+.button:hover {
+  background-color: grey;
+}
+    </style>
+  </head>
+  <body>
+<header>
+  <ul class="nav">
+    <img  id="logo" src="/images/logo.png"  alt="">
+
+
+    <li><a href="#">Latest Post</a></li>
+    <li>
+          <form action="/sessions?_method=DELETE" method="post">
+            <input class="btn" type="submit" name="" value="logout">
+          </form>
+        </li>
+
+  </ul>
+</header>
+<ul>
+    <%for(i = 0; i < shoe.length; i++){%>
+      <li>
+      <%=shoe[i].username%>
+      </li>
+      <%}%>
+  </ul>
+
+
+
+  </body>
+  <footer class="footer">
+    <ul class="nav">
+  <p>Copyright &copy; Stanley Gorman</p>
+    </ul>
+
+  </footer>
+
+</html>

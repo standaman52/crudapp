@@ -18,6 +18,10 @@
         padding-top: 50px;
 
       }
+      #image1{
+        width: 100px;
+        height: 100px;
+      }
 
       .button {
   text-align: center;
@@ -49,8 +53,22 @@
 </header>
 
 <div class="">
+<h6> Posted by: <a href="/users/new/profile"><%=user.username%></a></h6>
+    <p><%=shoe.status%></p>
+    <img id="image1" src="<%=shoe.img%>" alt=""></a><br>
+    <%=shoe.shoeName%></a>
 
+      <p><%=shoe.status%></p>
+      <p><%=shoe.location%></p>
+      <p>$<%=shoe.price%></p>
 </div>
+<section>
+      <form action="/shoes/<%=shoe._id%>?_method=DELETE" method="post">
+        <input type="submit" value="Delete Shoe"/>
+      </form>
+    </section>
+
+    <a class="button" href="/shoes/<%=shoe._id%>/edit">Edit</a>
 
 
 

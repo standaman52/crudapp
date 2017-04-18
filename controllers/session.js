@@ -18,7 +18,7 @@ router.post('/', function(req, res){
       //session object is created
       //curentUser property is created right there
       req.session.currentUser = foundUser;
-      res.redirect('users/new/profile');
+      res.redirect('/users/new/profile');
     }else {      // res.redirect('sessions/new');
               res.render('sessions/errorpage.ejs');
     }

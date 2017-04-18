@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var shoeSchema = Schema({
+  userId : String,
   shoeName : String,
   status:  String,
   price:String,

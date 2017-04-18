@@ -27,19 +27,28 @@
   padding: .5em;
   text-decoration: none;
 }
-.button:focus,
-.button:hover {
+.button:focus {
   background-color: grey;
+}
+#logo1{
+  width:15%;
+  height:35px;
+position: relative;
+
+left: -20%;
 }
     </style>
   </head>
   <body>
 <header>
   <ul class="nav">
-    <img  id="logo" src="/images/logo.png"  alt="">
+    <img  id="logo1" src="/images/logo.png"  alt="">
 
 
-    <li><a href="#">Latest Post</a></li>
+    <li><a href="/shoes">Latest Post</a></li>
+  <li> <a class="button" href="/shoes/new">New Post</a></li>
+<li><a class="button" href="/users/<%=currentUser._id%>/edit">Edit User</a></li>
+
     <li>
           <form action="/sessions?_method=DELETE" method="post">
             <input class="btn" type="submit" name="" value="logout">
@@ -53,7 +62,7 @@
   <img id="img" src="<%=currentUser.picture%>" alt="">
   <br><br>
 
-<a class="button" href="/shoes/new">New Post</a>
+
 
 
   </body>

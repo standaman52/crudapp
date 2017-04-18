@@ -48,24 +48,14 @@
 
   </ul>
 </header>
+<h1>EDIT ROUTE</h1>
 
+<form class="" action="/users/<%=user._id%>?_method=PUT" method="post">
+<label>Password:</label><input type="password" name="password"/><br/>
 
-<br>
-<form class="" action="/shoes" method="post">
-<label>Sneaker Name:</label><input type="text" name="shoeName" value=""><br>
-<label>Status:</label><input type="text" name="status" value=""><br>
-<label>Price:</label><input type="text" name="price" value=""><br>
-<label>Location:</label><input type="text" name="location" value=""><br>
-<label>Image:</label><input type="text" name="img" width="150" height="150"><br>
-<input type="hidden" name="userId" value="<%=currentUser._id%>">
-
-
-<input id="submit-add-page" type="submit" value="Post" >
-
+<label>Profile Picture:</label><input type="text" name="picture" value="<%=user.picture%>"autofocus onfocus="this.select()"/><br/>
+	<input type="submit" value="Update Author"/>
 </form>
-
-
-
 
   </body>
   <footer class="footer">

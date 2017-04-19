@@ -8,18 +8,19 @@ router.get('/new', function(req, res){
   res.render('users/new.ejs');
 });
 
-// router.get('/:id', function(req, res){
-//   User.findById(req.params.id, function(err, foundUsers){
-//     res.render('users/u.ejs', {
-//       user: foundUsers
-//     });
-//   });
-// });
-
 router.get('/new/profile', function(req, res){
-  res.render('users/index.ejs',{
+    console.log(req.session);
+  res.render('users/myProfile.ejs',{
       currentUser : req.session.currentUser
 
+  });
+});
+
+router.get('/:id', function(req, res){
+  User.findById(req.params.id, function(err, foundUser){
+    res.render('users/show.ejs', {
+      user : foundUser
+    });
   });
 });
 
@@ -42,11 +43,8 @@ router.get('/:id/edit', function(req, res){
 router.put('/:id', function(req, res){
   req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
 	User.findByIdAndUpdate(req.params.id, req.body, function(){
-		res.redirect('/users/new');
+		res.redirect('/users');
 	});
 });
-
-
-
 
 module.exports = router;

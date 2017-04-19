@@ -40,9 +40,9 @@
   <body>
 <header>
   <ul class="nav">
-    <img  id="logo" src="/images/logo.png"  alt="">
-
-
+      <a href="/"><img id="logo" src="/images/logo.png"  alt=""></a>
+        <li><a href="/users/new/profile">Profile</a></li>
+          <li><a href="/shoes">Latest Post</a></li>
     <li>
           <form action="/sessions?_method=DELETE" method="post">
             <input class="btn" type="submit" name="" value="logout">
@@ -53,7 +53,7 @@
 </header>
 
 <div class="">
-<h6> Posted by: <a href="/users/new/profile"><%=user.username%></a></h6>
+<h6> Posted by: <a href="/users/<%=user._id%>"><%=user.username%></a></h6>
     <p><%=shoe.status%></p>
     <img id="image1" src="<%=shoe.img%>" alt=""></a><br>
     <%=shoe.shoeName%></a>

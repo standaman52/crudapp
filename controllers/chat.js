@@ -1,5 +1,5 @@
 //http://javabeginnerstutorial.com/javascript-2/create-simple-chat-application-using-node-js-express-js-socket-io/\
-//THIS IS NOT MY A CODE
+//THIS IS NOT MY CODE
 var socket = io();
 function submitfunction(){
   var from = $('#user').val();

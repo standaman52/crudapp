@@ -14,8 +14,7 @@ router.get('/new', function(req, res){
 
 router.post('/', function(req, res){
   User.findOne({username: req.body.username}, function(err, foundUser){
-    console.log(err);
-    console.log(!foundUser);
+
     if(!foundUser){
 
       res.redirect('/');

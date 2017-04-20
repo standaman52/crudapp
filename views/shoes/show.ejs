@@ -4,38 +4,7 @@
   <meta charset="utf-8">
   <title></title>
   <link rel="stylesheet" href="/style.css">
-  <style media="screen">
-  body{
-    text-align: center;
-  }
-  #header{
-    text-align: center;
-  }
-
-  #img{
-    display: block;
-    margin: 0 auto;
-    padding-top: 50px;
-
-  }
-  #image1{
-    width: 100px;
-    height: 100px;
-  }
-
-  .button {
-    text-align: center;
-    background-color: black;
-    border-radius: 5px;
-    color: white;
-    padding: .5em;
-    text-decoration: none;
-  }
-  .button:focus,
-  .button:hover {
-    background-color: grey;
-  }
-  </style>
+  <link rel="stylesheet" href="/shoes-show.css">
 </head>
 <body>
   <header>
@@ -48,41 +17,31 @@
           <input class="btn" type="submit" name="" value="logout">
         </form>
       </li>
-
     </ul>
   </header>
+  <br><br><br><br><br><br><br>
 
-  <div class="">
-
-
-
+  <p> Posted by: <a href="/users/<%=user._id%>"><%=user.username%></a></p>
+  <div class="border">
     <img id="image1" src="<%=shoe.img%>" alt=""></a><br>
-
     <%=shoe.shoeName%></a>
-
     <p><%=shoe.status%></p>
     <p><%=shoe.location%></p>
     <p>$<%=shoe.price%></p>
-      <h6> Posted by: <a href="/users/<%=user._id%>"><%=user.username%></a></h6>
   </div>
+
+
   <section>
-
-
     <form action="/shoes/<%=shoe._id%>?_method=DELETE" method="post">
-      <input type="submit" value="Delete Shoe"/>
+      <input class="button" type="submit" value="Delete Shoe"/>
     </form>
   </section>
-
+  <br>
   <a class="button" href="/shoes/<%=shoe._id%>/edit">Edit</a>
-
-
-
 </body>
 <footer class="footer">
   <ul class="nav">
     <p>Copyright &copy; Stanley Gorman</p>
   </ul>
-
 </footer>
-
 </html>

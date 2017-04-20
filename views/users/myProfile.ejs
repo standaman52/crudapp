@@ -1,75 +1,36 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="/style.css">
-    <style media="screen">
-    body{
-      text-align: center;
-    }
-      #header{
-        text-align: center;
-      }
-
-      #img{
-        display: block;
-        margin: 0 auto;
-        padding-top: 50px;
-
-      }
-      .button {
-  text-align: center;
-  background-color: black;
-  border-radius: 5px;
-  color: white;
-  padding: .5em;
-  text-decoration: none;
-}
-.button:focus {
-  background-color: grey;
-}
-#logo1{
-  width:15%;
-  height:35px;
-position: relative;
-
-left: -20%;
-}
-    </style>
-  </head>
-  <body>
-<header>
-  <ul class="nav">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/user-myProfile.css">
+  <style media="screen">
+  </style>
+</head>
+<body>
+  <header>
+    <ul class="nav">
       <a href="/"><img id="logo" src="/images/logo.png"  alt=""></a>
+      <li><a href="/shoes">Latest Post</a></li>
+      <li> <a href="/shoes/new">Add Item</a></li>
+      <li>
+        <form action="/sessions?_method=DELETE" method="post">
+          <input class="btn" type="submit" name="" value="logout">
+        </form>
+      </li>
 
-
-    <li><a href="/shoes">Latest Post</a></li>
-  <li> <a href="/shoes/new">Add Item</a></li>
-
-
-    <li>
-          <form action="/sessions?_method=DELETE" method="post">
-            <input class="btn" type="submit" name="" value="logout">
-          </form>
-        </li>
-
-  </ul>
-</header>
-<br>
-   <h1>Welcome <%=currentUser.username%>!</h1>
+    </ul>
+  </header>
+  <br>
+  <h1>Welcome <%=currentUser.username%>!</h1>
   <img id="img" src="<%=currentUser.picture%>" alt="">
   <br><br>
 
-
-
-
-  </body>
-  <footer class="footer">
-    <ul class="nav">
-  <p>Copyright &copy; Stanley Gorman</p>
-    </ul>
-
-  </footer>
-
+</body>
+<footer class="footer">
+  <ul class="nav">
+    <p>Copyright &copy; Stanley Gorman</p>
+  </ul>
+</footer>
 </html>

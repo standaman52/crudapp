@@ -14,15 +14,24 @@ router.get('/new', function(req, res){
 
 router.post('/', function(req, res){
   User.findOne({username: req.body.username}, function(err, foundUser){
-    if(bcrypt.compareSync(req.body.password, foundUser.password)){
-      //session object is created
-      //curentUser property is created right there
-      req.session.currentUser = foundUser;
-      res.redirect('/users/new/profile');
-    }else {      // res.redirect('sessions/new');
-              res.render('sessions/errorpage.ejs');
+    console.log(err);
+    console.log(!foundUser);
+    if(!foundUser){
+
+      res.redirect('/');
     }
-  });
+    else {
+      if(bcrypt.compareSync(req.body.password, foundUser.password)){
+        //session object is created
+        //curentUser property is created right there
+        req.session.currentUser = foundUser;
+        res.redirect('/users/new/profile');
+      }else {      // res.redirect('sessions/new');
+                res.render('sessions/errorpage.ejs');
+      }
+
+    }
+    });
 });
 
 router.delete('/', function(req, res){

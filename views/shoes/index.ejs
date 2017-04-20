@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/shoe-index.css">
+</head>
+<body>
+  <header>
+    <ul class="nav">
+      <a href="/"><img id="logo" src="/images/logo.png"  alt=""></a>
+      <li><a href="/users/new/profile">Profile</a></li>
+      <li><a href="/shoes/new">Add Item</a></li>
+      <li>
+        <form action="/sessions?_method=DELETE" method="post">
+          <input class="btn" type="submit" name="" value="logout">
+        </form>
+      </li>
+    </ul>
+  </header>
+  <br>
+  <h1>Shoes Available </h1>
+  <%for(i = 0; i < shoe.length; i++){%>
+    <div class="border">
+      <a href="/shoes/<%=shoe[i].id%>"><img id="image1" src="<%=shoe[i].img%>" alt=""></a><br>
+      <a href="/shoes/<%=shoe[i].id%>"><%=shoe[i].shoeName%></a>
+      <p><%=shoe[i].status%></p>
+      <p><%=shoe[i].location%></p>
+      <p>$<%=shoe[i].price%></p>
+    </div>
+    <%}%>
+  </body>
+  <footer class="footer">
+    <ul class="nav">
+      <p>Copyright &copy; Stanley Gorman</p>
+    </ul>
+  </footer>
+  </html>

@@ -34,13 +34,14 @@ router.get('/:id', function(req, res){
 
 //articles index route
 router.get('/', function(req, res){
-  Shoe.find({}, function(err, foundShoes){
-    res.render('shoes/index.ejs', {
-      shoe: foundShoes,
-
-    });
-
-  });
+  // Shoe.find({}, function(err, foundShoes){
+  //   res.render('shoes/index.ejs', {
+  //     shoe: foundShoes
+  //
+  //   });
+  //
+  // });
+  res.render("shoes/index.ejs");
 });
 
 

@@ -1,85 +1,88 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="/style.css">
-    <style media="screen">
-    body{
-      text-align: center;
-    }
-      #header{
-        text-align: center;
-      }
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="/style.css">
+  <style media="screen">
+  body{
+    text-align: center;
+  }
+  #header{
+    text-align: center;
+  }
 
-      #img{
-        display: block;
-        margin: 0 auto;
-        padding-top: 50px;
+  #img{
+    display: block;
+    margin: 0 auto;
+    padding-top: 50px;
 
-      }
-      #image1{
-        width: 100px;
-        height: 100px;
-      }
+  }
+  #image1{
+    width: 100px;
+    height: 100px;
+  }
 
-      .button {
-  text-align: center;
-  background-color: black;
-  border-radius: 5px;
-  color: white;
-  padding: .5em;
-  text-decoration: none;
-}
-.button:focus,
-.button:hover {
-  background-color: grey;
-}
-    </style>
-  </head>
-  <body>
-<header>
-  <ul class="nav">
+  .button {
+    text-align: center;
+    background-color: black;
+    border-radius: 5px;
+    color: white;
+    padding: .5em;
+    text-decoration: none;
+  }
+  .button:focus,
+  .button:hover {
+    background-color: grey;
+  }
+  </style>
+</head>
+<body>
+  <header>
+    <ul class="nav">
       <a href="/"><img id="logo" src="/images/logo.png"  alt=""></a>
-        <li><a href="/users/new/profile">Profile</a></li>
-          <li><a href="/shoes">Latest Post</a></li>
-    <li>
-          <form action="/sessions?_method=DELETE" method="post">
-            <input class="btn" type="submit" name="" value="logout">
-          </form>
-        </li>
+      <li><a href="/users/new/profile">Profile</a></li>
+      <li><a href="/shoes">Latest Post</a></li>
+      <li>
+        <form action="/sessions?_method=DELETE" method="post">
+          <input class="btn" type="submit" name="" value="logout">
+        </form>
+      </li>
 
-  </ul>
-</header>
+    </ul>
+  </header>
 
-<div class="">
-<h6> Posted by: <a href="/users/<%=user._id%>"><%=user.username%></a></h6>
+  <div class="">
 
 
-    <p><%=shoe.status%></p>
+
     <img id="image1" src="<%=shoe.img%>" alt=""></a><br>
+
     <%=shoe.shoeName%></a>
 
-      <p><%=shoe.status%></p>
-      <p><%=shoe.location%></p>
-      <p>$<%=shoe.price%></p>
-</div>
-<section>
-      <form action="/shoes/<%=shoe._id%>?_method=DELETE" method="post">
-        <input type="submit" value="Delete Shoe"/>
-      </form>
-    </section>
-
-    <a class="button" href="/shoes/<%=shoe._id%>/edit">Edit</a>
+    <p><%=shoe.status%></p>
+    <p><%=shoe.location%></p>
+    <p>$<%=shoe.price%></p>
+      <h6> Posted by: <a href="/users/<%=user._id%>"><%=user.username%></a></h6>
+  </div>
+  <section>
 
 
+    <form action="/shoes/<%=shoe._id%>?_method=DELETE" method="post">
+      <input type="submit" value="Delete Shoe"/>
+    </form>
+  </section>
 
-  </body>
-  <footer class="footer">
-    <ul class="nav">
-  <p>Copyright &copy; Stanley Gorman</p>
-    </ul>
+  <a class="button" href="/shoes/<%=shoe._id%>/edit">Edit</a>
 
-  </footer>
+
+
+</body>
+<footer class="footer">
+  <ul class="nav">
+    <p>Copyright &copy; Stanley Gorman</p>
+  </ul>
+
+</footer>
 
 </html>

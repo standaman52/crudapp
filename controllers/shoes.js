@@ -46,6 +46,7 @@ router.get('/', function(req, res){
 
 
 
+
 router.post('/', function(req, res){
   User.findById(req.body.userId, function(err, foundUsers){
     Shoe.create(req.body, function(err, createdShoe){

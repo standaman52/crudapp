@@ -1,77 +1,65 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="/style.css">
-    <style media="screen">
-    body{
-      text-align: center;
-    }
-      #header{
-        text-align: center;
-      }
-
-      #img{
-        display: block;
-        margin: 0 auto;
-        padding-top: 50px;
-
-      }
-
-      .button {
-  text-align: center;
-  background-color: black;
-  border-radius: 5px;
-  color: white;
-  padding: .5em;
-  text-decoration: none;
-}
-.button:focus,
-.button:hover {
-  background-color: grey;
-}
-    </style>
-  </head>
-  <body>
-<header>
-  <ul class="nav">
-      <a href="/"><img id="logo" src="/images/logo.png"  alt=""></a>
-    <li><a href="/users/new/profile">Profile</a></li>
-    <li><a href="/shoes">Latest Post</a></li>
-    <li>
-          <form action="/sessions?_method=DELETE" method="post">
-            <input class="btn" type="submit" name="" value="logout">
-          </form>
-        </li>
-
-  </ul>
-</header>
-
-
-<br>
-<form class="" action="/shoes" method="post">
-<label>Item Name:</label><input type="text" name="shoeName" value=""><br>
-<label>Status:</label><input type="text" name="status" value=""><br>
-<label>Price:</label><input type="text" name="price" value=""><br>
-<label>Location:</label><input type="text" name="location" value=""><br>
-<label>Image:</label><input type="text" name="img" width="150" height="150"><br>
-<input type="hidden" name="userId" value="<%=currentUser._id%>">
-
-
-<input id="submit-add-page" type="submit" value="Post" >
-
-</form>
-
-
-
-
-  </body>
-  <footer class="footer">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="/style.css">
+  <style media="screen">
+  body{
+    text-align: center;
+  }
+  #header{
+    text-align: center;
+  }
+  #img{
+    display: block;
+    margin: 0 auto;
+    padding-top: 50px;
+  }
+  .button {
+    text-align: center;
+    background-color: black;
+    border-radius: 5px;
+    color: white;
+    padding: .5em;
+    text-decoration: none;
+  }
+  .button:focus,
+  .button:hover {
+    background-color: grey;
+  }
+  </style>
+</head>
+<body>
+  <header>
     <ul class="nav">
-  <p>Copyright &copy; Stanley Gorman</p>
+      <a href="/"><img id="logo" src="/images/logo.png"  alt=""></a>
+      <li><a href="/users/new/profile">Profile</a></li>
+      <li><a href="/shoes">Latest Post</a></li>
+      <li>
+        <form action="/sessions?_method=DELETE" method="post">
+          <input class="btn" type="submit" name="" value="logout">
+        </form>
+      </li>
     </ul>
+  </header>
+  <br><br><br><br><br><br><br>
 
-  </footer>
-
+  <form class="" action="/shoes" method="post">
+    <div class="create-shoe">
+      <label>Item Name:</label><input type="text" name="shoeName" value="" required><br>
+      <label>Status:</label><input type="text" name="status" value="" required><br>
+      <label>Price:</label><input type="text" name="price" value=""required><br>
+      <label>Location:</label><input type="text" name="location" value=""required><br>
+      <label>Image:</label><input type="text" name="img" width="150" height="150"required><br>
+      <input type="hidden" name="userId" value="<%=currentUser._id%>"><br>
+      <input class="btn1" type="submit" value="Add Item" >
+    </div>
+  </form>
+</body>
+<footer class="footer">
+  <ul class="nav">
+    <p>Copyright &copy; Stanley Gorman</p>
+  </ul>
+</footer>
 </html>

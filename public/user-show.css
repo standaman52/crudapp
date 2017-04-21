@@ -9,6 +9,8 @@ body{
     display: block;
     margin: 0 auto;
     padding-top: 50px;
+    width: 200px;
+    height: 200px;
 
   }
   .button {

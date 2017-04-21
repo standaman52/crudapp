@@ -17,7 +17,7 @@ router.post('/', function(req, res){
 
     if(!foundUser){
 
-      res.send('broken page');
+      res.render('sessions/errorpage.ejs');
     }
     else {
       if(bcrypt.compareSync(req.body.password, foundUser.password)){
